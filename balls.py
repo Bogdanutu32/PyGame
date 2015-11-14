@@ -9,7 +9,7 @@ SIZE = 640, 480
 
 def intn(*arg):
     '''Return list of ints from arg tuple'''
-    return map(int,arg)
+    return list(map(int,arg))
 
 def Init(sz):
     '''Turn PyGame on'''
@@ -183,7 +183,7 @@ def __main__():
     Game = Universe(50)
 
     Run = GameWithDnD()
-    for i in xrange(5):
+    for i in range(5):
         x, y = random.randrange(screenrect.w), random.randrange(screenrect.h)
         dx, dy = 1+random.random()*5, 1+random.random()*5
         Run.objects.append(Ball("ball.gif",(x,y),(dx,dy)))
